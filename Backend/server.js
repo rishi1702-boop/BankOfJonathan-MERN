@@ -37,7 +37,7 @@ const APP_DIR = "../Frontend/SmartBank/dist"
 
 //https://BankOfJonathan-3q8n.onrender.com
 app.use(cors({
-  origin: ["http://localhost:5173"],  // frontend origin
+  origin: process.env.FRONTEND_URL ? process.env.FRONTEND_URL.split(',') : "http://localhost:5173",  // allow deployed frontend or local
   credentials: true,                // allow cookies to be sent
 }));
 
