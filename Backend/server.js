@@ -60,6 +60,11 @@ app.use('/admin', adminRoute);
 // app.get('*.*', express.static(path.join(__dirname, APP_DIR)));
 // app.all('*', ...)
 
+// Root endpoint for health check
+app.get('/', (req, res) => {
+  res.status(200).json({ status: 'success', message: 'API is running' });
+});
+
 // ✅ Instead, just handle unknown API routes with 404
 app.all('*', (req, res, next) => {
   return next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
