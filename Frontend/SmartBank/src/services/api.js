@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000').replace(/\/$/, '');
+const baseURL = (import.meta.env.VITE_API_BASE_URL || 'https://bankofjonathan-mern-5nuh.onrender.com').replace(/\/$/, '');
 
 const api = axios.create({
   baseURL,
